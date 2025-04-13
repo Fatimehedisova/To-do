@@ -6,6 +6,9 @@ let input1 = document.querySelector('input');
 let commentInput = document.querySelector('.comment-input');
 let plus = document.querySelector('.purple-1');
 plus.addEventListener('click', () => {
+    if (ul.querySelectorAll('li').length === 0) {
+        return;
+    }
     flag = !flag;
     commentInput.style.display = flag ? 'flex' : 'none';
     if (flag) input1.focus();
@@ -29,9 +32,10 @@ btn.addEventListener('click', () => {
             li.remove();
             if (ul.querySelectorAll('li').length === 0) {
                 ul.style.display = 'none';
-                commentInput.style.display ='flex';
+                commentInput.style.display = 'flex';
                 flag = true;
             }
+            
         });
         ul.appendChild(li);
         input1.value = '';

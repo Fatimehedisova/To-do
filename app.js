@@ -29,7 +29,8 @@ btn.addEventListener('click', () => {
             li.remove();
             if (ul.querySelectorAll('li').length === 0) {
                 ul.style.display = 'none';
-
+                commentInput.style.display ='flex';
+                flag = true;
             }
         });
         ul.appendChild(li);
